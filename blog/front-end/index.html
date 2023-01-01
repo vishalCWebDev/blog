@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>web Blogs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .set-error {
+            border: 1px solid red;
+        }
+
+        .remove-error {
+            border: inherit;
+        }
+
+        
+        p::first-letter {
+            color: rgb(84, 78, 78);
+            font-size: 25px;
+            text-transform: capitalize;
+            font-style: oblique;
+            font-weight: 500;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+      
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Blogsite</h1>
+        <p>html and css code support</p>
+    </div>
+
+    <div class="container my-5">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
+            </li>
+            <li class="nav-item" onclick="blog('http://localhost:8080/blog/technology','#technology')">
+                <a class="nav-link" data-toggle="pill" href="#technology">Technology</a>
+            </li>
+            <li class="nav-item" onclick="blog('http://localhost:8080/blog/education','#education')">
+                <a class="nav-link" data-toggle="pill" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#blogwap">Blog</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+
+            </div>
+            <div id="technology" class="container tab-pane fade"><br>
+
+
+            </div>
+            <div id="education" class="container tab-pane fade"><br>
+
+
+            </div>
+            <div id="blogwap" class="container tab-pane fade"><br>
+                <h3>Post a Blog</h3>
+                <form class="w-75">
+
+                    <div class="mb-4">
+                        <input type="text" name="title" class="form-control title">
+                        <p class="title-error text-danger"></p>
+                    </div>
+                    <div class="mb-4">
+                        <select class="form-select from-control py-1 w-100" name="category">
+                            <option>technology</option>
+                            <option>education</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <input type="file" name="image" class="form-control image" id="image" accept="image/*">
+                        <p class="image-error text-danger"></p>
+                    </div>
+                    <div class="mb-4">
+                        <textarea class="form-control content" name="content" rows="20"></textarea>
+                        <p class="content-error text-danger"></p>
+                    </div>
+                    <div class="mb-4">
+                        <button type="submit"  class="btn btn-primary py-1 rounded-0">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron text-center">
+        <p>www.blogsite.com</p>
+        <p>create by <b>Vishal Chaudhari</b></p>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #con {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #box {
+      background-color: var(--black);
+      width: 50%;
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 10em;
+      color: red;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      position: relative;
+      animation: move-text 3s linear;
+    }
+
+    @keyframes move-text {
+      from {
+        transform: scale(0.1);
+      }
+    }
+
+
+    p {
+      text-align: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      position: relative;
+      top: -100;
+      transition: top 3s;
+      animation: text-bottom 3s linear;
+    }
+
+    @keyframes text-bottom {
+      from {
+             top: "100px";
+           }
+      to {
+           top: "0";
+         }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="con">
+    <div id="box">
+      <h1>404</h1>
+      <p>Page Not Found</p>
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+<script>
+
+const ajax = new XMLHttpRequest();
+ajax.open("GET","https://jsonplaceholder.typicode.com/posts",true);
+ajax.send();
+
+ajax.onload = () => {
+  const data = ajax.responseText;
+}
+
+</script>
+
+</html>
